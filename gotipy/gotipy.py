@@ -3,6 +3,8 @@
 
 import json
 import os
+import sys
+import traceback
 
 import requests
 from requests.auth import HTTPBasicAuth
@@ -96,7 +98,7 @@ class Gotify:
 
         try:
             return resp.json()
-        except json.decoder.JSONDecodeError as e:
-            logger.exception(e)
-        except requests.exceptions.ConnectionError as e:
-            logger.exception(e)
+        except json.decoder.JSONDecodeError:
+            traceback.print_exception(*sys.exc_info())
+        except requests.exceptions.ConnectionError:
+            traceback.print_exception(*sys.exc_info())
