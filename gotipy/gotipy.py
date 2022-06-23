@@ -59,6 +59,7 @@ class Gotify:
             raise TypeError(
                 'Missing a valid scheme in the host address (e.g., `http://`)!'
             )
+        host_address = host_address.rstrip('/')
         return host_address
 
     def create_app(self, admin_username, admin_password, app_name, desc=None):
