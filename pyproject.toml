@@ -1,15 +1,17 @@
-[build-system]
-requires = ["flit_core >=3.2,<4"]
-build-backend = "flit_core.buildapi"
-
-[project]
+[tool.poetry]
 name = "gotipy"
-authors = [{name = "Alyetama", email = "56323389+Alyetama@users.noreply.github.com"}]
+version = "0.2.2"
+description = "A simple Python wrapper for Gotify"
+authors = ["Mohammad Alyetama <malyetama@pm.me>"]
+license = "MIT"
 readme = "README.md"
-license = {file = "LICENSE"}
-classifiers = ["License :: OSI Approved :: MIT License"]
-dynamic = ["version", "description"]
-dependencies = ["requests"]
 
-[project.urls]
-Home = "https://github.comm/Alyetama/gotipy"
+[tool.poetry.dependencies]
+python = "^3.6"
+requests = "^2.28.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
